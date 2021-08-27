@@ -2,3 +2,33 @@
   width: 100%;
   height: 100%;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: none;
+  color: inherit;
+}
+/* ----------------------------NAVBAR-------------------------- */
+
+div.nav-container {
+  width: 100%;
+  height: 4rem;
+  background-color: #869f4a;
+}
+
+div.container.nav-items-cont {
+  display: flex;
+  align-items: center;
+}
+
+.home-logo {
+  color: #f2c879;
+  font-size: 2.5rem;
+}
+
+.home-logo:hover {
+  color: #fee0a9;
+}
