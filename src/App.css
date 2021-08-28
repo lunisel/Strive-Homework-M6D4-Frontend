@@ -32,3 +32,27 @@ div.container.nav-items-cont {
 .home-logo:hover {
   color: #fee0a9;
 }
+
+.dropdown-toggle::after {
+  border-top-color: #f2c879;
+}
+
+svg.cup:hover {
+  cursor: pointer;
+  filter: brightness(108%);
+}
+
+img.user-img {
+  width: auto;
+  height: 2rem;
+}
+
+img.user-img:hover {
+  cursor: pointer;
+  filter: brightness(108%);
+}
+
+svg.cart:hover {
+  cursor: pointer;
+  filter: brightness(108%);
+}
