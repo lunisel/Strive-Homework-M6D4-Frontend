@@ -15,7 +15,16 @@ const Navbar = ({ history }) => {
           </Col>
 
           <Col md={7} className="d-none d-md-flex align-items-center">
-            <Form.Control type="text" placeholder="Search..."></Form.Control>
+            <Form.Control
+              type="text"
+              placeholder="Search..."
+              onChange={(e) => {
+                history.push("/search?" + e.target.value.toLowerCase());
+                if (e.target.value === "") {
+                  history.push("/");
+                }
+              }}
+            ></Form.Control>
           </Col>
 
           <Col
@@ -66,7 +75,7 @@ const Navbar = ({ history }) => {
 
             <img
               src={UserPhoto}
-              alt="user image"
+              alt="user"
               className="user-img mx-3"
               onClick={() => history.push("/account")}
             />
