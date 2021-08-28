@@ -1,9 +1,9 @@
 /* import { useState } from "react"; */
 import { Container } from "react-bootstrap";
-import FetchAllTeas from "./FetchAllTeas";
-import SideNav from "./SideNav";
+import SideNav from "../Home/SideNav";
+import FetchFilteredTeas from "./FetchFilteredTeas";
 
-const Homepage = () => {
+const Search = () => {
   /*   const [fileInput, setFileInput] = useState(""); */
 
   /*   const handleFileInputChange = (e) => {
@@ -14,8 +14,8 @@ const Homepage = () => {
     <div className="homepage-all">
       <SideNav />
       <Container className="home-cont">
-        <div className="tea-cont">
-          <FetchAllTeas />
+        <div className="tea-cont pl-5">
+          <FetchFilteredTeas />
         </div>
 
         {/*  <Form.Control
@@ -28,4 +28,4 @@ const Homepage = () => {
   );
 };
 
-export default Homepage;
+export default Search;
