@@ -8,13 +8,17 @@ const Navbar = ({ history, location }) => {
     <div className="nav-container">
       <Container className="nav-items-cont">
         <Row className="w-100 justify-content-between">
-          <Col xs={5} md={2}>
+          <Col xs={5} md={2} className="p-0">
             <Link to="/" className="home-logo">
               LOGO
             </Link>
           </Col>
 
-          <Col md={7} className="d-none d-md-flex align-items-center">
+          <Col
+            md={7}
+            lg={8}
+            className="d-none d-md-flex align-items-center p-0"
+          >
             <Form.Control
               type="text"
               placeholder="Search..."
@@ -30,7 +34,8 @@ const Navbar = ({ history, location }) => {
           <Col
             xs={7}
             md={3}
-            className="d-flex align-items-center justify-content-end"
+            lg={2}
+            className="d-flex align-items-center justify-content-end p-0"
           >
             <div class="btn-group">
               <button
@@ -77,7 +82,9 @@ const Navbar = ({ history, location }) => {
               src={UserPhoto}
               alt="user"
               className="user-img mx-3"
-              onClick={() => history.push("/account")}
+              onClick={() => {
+                history.push("/account");
+              }}
             />
             <Cart4
               viewBox="0 0 16 16"

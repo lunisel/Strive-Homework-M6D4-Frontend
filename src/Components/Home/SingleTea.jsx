@@ -1,10 +1,19 @@
 import { Col, Row } from "react-bootstrap";
+import { withRouter } from "react-router-dom";
 
 const SingleTea = (prop) => {
+  console.log(prop.image_url);
   return (
-    <div className="tea-card">
+    <div
+      className="tea-card"
+      onClick={() => prop.history.push(`/tea/${prop.id}`)}
+    >
       <img
-        src="https://via.placeholder.com/200"
+        src={
+          prop.image_url !== null
+            ? `${prop.image_url}`
+            : "https://via.placeholder.com/200"
+        }
         alt="tea"
         className="tea-img img-fluid w-100"
       />
@@ -22,4 +31,4 @@ const SingleTea = (prop) => {
   );
 };
 
-export default SingleTea;
+export default withRouter(SingleTea);

@@ -29,7 +29,7 @@ const FetchFilteredTeas = (props) => {
         {teas &&
           teas.map((tea) => (
             <Col xs={12} md={4} lg={3}>
-              <SingleTea name={tea.name} price={tea.price} />
+              <SingleTea name={tea.name} price={tea.price} id={tea.id} />
             </Col>
           ))}
       </Row>

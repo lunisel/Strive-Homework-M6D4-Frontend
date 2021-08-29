@@ -1,6 +1,7 @@
 import { Component } from "react";
 import { Col, Row } from "react-bootstrap";
 import Loading from "../Loading";
+import SideNav from "./SideNav";
 import SingleTea from "./SingleTea";
 
 class FetchAllTeas extends Component {
@@ -30,17 +31,27 @@ class FetchAllTeas extends Component {
 
   render() {
     return (
-      <div className="teas-container">
-        <Row>
-          {this.state.isLoading && <Loading />}
-          {this.state.teas &&
-            this.state.teas.map((tea) => (
-              <Col xs={12} md={4} lg={3} key={tea.id}>
-                <SingleTea name={tea.name} price={tea.price} />
-              </Col>
-            ))}
-        </Row>
-      </div>
+      <Row>
+        <Col md={2} className="p-0">
+          <SideNav />
+        </Col>
+        <Col xs={12} md={10} className="p-0 teas-container px-2">
+          <Row>
+            {this.state.isLoading && <Loading />}
+            {this.state.teas &&
+              this.state.teas.map((tea) => (
+                <Col xs={12} md={4} lg={3} key={tea.id}>
+                  <SingleTea
+                    name={tea.name}
+                    price={tea.price}
+                    id={tea.id}
+                    image_url={tea.image_url}
+                  />
+                </Col>
+              ))}
+          </Row>
+        </Col>
+      </Row>
     );
   }
 }
