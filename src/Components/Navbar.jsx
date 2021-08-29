@@ -3,7 +3,7 @@ import { Link, withRouter } from "react-router-dom";
 import { Cup, Cart4 } from "react-bootstrap-icons";
 import UserPhoto from "./../assets/user.png";
 
-const Navbar = ({ history }) => {
+const Navbar = ({ history, location }) => {
   return (
     <div className="nav-container">
       <Container className="nav-items-cont">

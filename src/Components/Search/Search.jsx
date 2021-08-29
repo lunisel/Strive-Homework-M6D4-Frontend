@@ -14,7 +14,7 @@ const Search = () => {
     <div className="homepage-all">
       <SideNav />
       <Container className="home-cont">
-        <div className="tea-cont pl-5">
+        <div className="tea-cont">
           <FetchFilteredTeas />
         </div>
 

@@ -15,7 +15,7 @@ class FetchAllTeas extends Component {
         isLoading: true,
       });
       const response = await fetch(
-        process.env.REACT_APP_SERVER_URL + "products"
+        process.env.REACT_APP_SERVER_URL + "/products"
       );
       const data = await response.json();
       this.setState({
