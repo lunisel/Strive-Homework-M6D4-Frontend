@@ -12,17 +12,8 @@ const Search = () => {
   }; */
   return (
     <div className="homepage-all">
-      <SideNav />
       <Container className="home-cont">
-        <div className="tea-cont">
-          <FetchFilteredTeas />
-        </div>
-
-        {/*  <Form.Control
-        type="file"
-        value={fileInput}
-        onChange={handleFileInputChange}
-      /> */}
+        <FetchFilteredTeas />
       </Container>
     </div>
   );

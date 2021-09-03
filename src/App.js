@@ -12,7 +12,7 @@ function App() {
         <Navbar />
         <Route path="/" exact render={(props) => <Homepage {...props} />} />
         <Route path="/search" render={(props) => <Search {...props} />} />
-        <Route path="/tea/:id" component={TeaDetails} />
+        <Route path="/product/:id" component={TeaDetails} />
       </BrowserRouter>
     </div>
   );

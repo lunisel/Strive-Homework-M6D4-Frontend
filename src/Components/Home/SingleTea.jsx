@@ -6,7 +6,7 @@ const SingleTea = (prop) => {
   return (
     <div
       className="tea-card"
-      onClick={() => prop.history.push(`/tea/${prop.id}`)}
+      onClick={() => prop.history.push(`/product/${prop.id}`)}
     >
       <img
         src={
@@ -14,7 +14,7 @@ const SingleTea = (prop) => {
             ? `${prop.image_url}`
             : "https://via.placeholder.com/200"
         }
-        alt="tea"
+        alt="product"
         className="tea-img img-fluid w-100"
       />
       <Row className="tea-info">

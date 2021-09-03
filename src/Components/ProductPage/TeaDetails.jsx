@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Container, Form } from "react-bootstrap";
+import { Col, Container, Form, Row } from "react-bootstrap";
 
 const TeaDetails = (props) => {
   const [tea, setTea] = useState(null);
@@ -51,9 +51,7 @@ const TeaDetails = (props) => {
   useEffect(() => {
     async function fetchData() {
       try {
-        const response = await fetch(
-          `${process.env.REACT_APP_SERVER_URL}/products/${id}`
-        );
+        const response = await fetch(`http://localhost:3001/products/${id}`);
         const data = await response.json();
         setTea(data);
         console.log(data);
@@ -69,14 +67,20 @@ const TeaDetails = (props) => {
       <Container>
         {tea && (
           <>
-            <h1>{tea.name}</h1>
-            <p>{tea.description}</p>
-            <p>{tea.ingredients}</p>
-            <img src={tea.image_url} />
-            <Form.Control
-              type="file"
-              onChange={handlePosterOnChange}
-            ></Form.Control>
+            <Row>
+              <Col xs={12} md={5}>
+                <img src={tea.image_url} alt="product" className="img-fluid" />
+              </Col>
+              <Col xs={12} md={7}>
+                <h1>{tea.name}</h1>
+                <p>BRAND : {tea.brand}</p>
+                <p>DESCRIPTION: {tea.description}</p>
+                <p>PRICE: {tea.price}$</p>
+              </Col>
+            </Row>
+            <Row>
+              <Col xs={12}></Col>
+            </Row>
           </>
         )}
       </Container>

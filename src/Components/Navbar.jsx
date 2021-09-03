@@ -10,7 +10,7 @@ const Navbar = ({ history, location }) => {
         <Row className="w-100 justify-content-between">
           <Col xs={5} md={2} className="p-0">
             <Link to="/" className="home-logo">
-              LOGO
+              Amazon
             </Link>
           </Col>
 

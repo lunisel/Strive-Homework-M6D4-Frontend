@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
 import { withRouter } from "react-router-dom";
 import SingleTea from "../Home/SingleTea";
+import SideNav from "../Home/SideNav";
 
 const FetchFilteredTeas = (props) => {
   const [teas, setTeas] = useState(null);
@@ -24,16 +25,26 @@ const FetchFilteredTeas = (props) => {
   }, [props.location.search]);
 
   return (
-    <div className="teas-container">
-      <Row>
-        {teas &&
-          teas.map((tea) => (
-            <Col xs={12} md={4} lg={3}>
-              <SingleTea name={tea.name} price={tea.price} id={tea.id} />
-            </Col>
-          ))}
-      </Row>
-    </div>
+    <Row>
+      <Col md={2} className="p-0">
+        <SideNav />
+      </Col>
+      <Col xs={12} md={10} className="p-0 teas-container px-2">
+        <Row>
+          {teas &&
+            teas.map((tea) => (
+              <Col xs={12} md={4} lg={3} key={tea._id}>
+                <SingleTea
+                  name={tea.name}
+                  price={tea.price}
+                  id={tea._id}
+                  image_url={tea.image_url}
+                />
+              </Col>
+            ))}
+        </Row>
+      </Col>
+    </Row>
   );
 };
 

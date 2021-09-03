@@ -15,9 +15,7 @@ class FetchAllTeas extends Component {
         ...this.state,
         isLoading: true,
       });
-      const response = await fetch(
-        process.env.REACT_APP_SERVER_URL + "/products"
-      );
+      const response = await fetch(`http://localhost:3001/products`);
       const data = await response.json();
       this.setState({
         teas: data,
@@ -40,11 +38,11 @@ class FetchAllTeas extends Component {
             {this.state.isLoading && <Loading />}
             {this.state.teas &&
               this.state.teas.map((tea) => (
-                <Col xs={12} md={4} lg={3} key={tea.id}>
+                <Col xs={12} md={4} lg={3} key={tea._id}>
                   <SingleTea
                     name={tea.name}
                     price={tea.price}
-                    id={tea.id}
+                    id={tea._id}
                     image_url={tea.image_url}
                   />
                 </Col>
