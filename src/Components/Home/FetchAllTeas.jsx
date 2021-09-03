@@ -43,7 +43,7 @@ class FetchAllTeas extends Component {
                     name={tea.name}
                     price={tea.price}
                     id={tea._id}
-                    image_url={tea.image_url}
+                    image_url={tea.imageUrl}
                   />
                 </Col>
               ))}

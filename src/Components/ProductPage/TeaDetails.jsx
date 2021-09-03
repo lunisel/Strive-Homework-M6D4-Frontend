@@ -69,7 +69,7 @@ const TeaDetails = (props) => {
           <>
             <Row>
               <Col xs={12} md={5}>
-                <img src={tea.image_url} alt="product" className="img-fluid" />
+                <img src={tea.imageUrl} alt="product" className="img-fluid" />
               </Col>
               <Col xs={12} md={7}>
                 <h1>{tea.name}</h1>
